@@ -1,0 +1,129 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summary page</title>
+    <link rel="icon" href="{% static 'home/images/icon.JPG' %}" type="image/icon type">
+    <link rel="stylesheet" href="{% static 'home/assets/css/main.css' %}"/> 
+</head>
+
+<body style="background-image:url('{% static 'home/images/header.JPG' %}')">
+    
+    <div style="height: 70px;width: 100%;background:#3d3d3d; color:#fff;">
+        <p style="padding: 19px; font-size:x-large;">
+            <img  src="{% static 'home/images/icon1.JPG' %}" height="25px">  TEXT SUMMARIZER
+            
+            
+            <a href="http://127.0.0.1:8000/home/homepage" class="icon solid fa-home" style="color: white;margin-left:85%;"></a> 
+        </p></div>
+    <br>
+    <form class="form dark" action ="/home/summarize" method ="post" style="margin-left:0.5%;">
+        
+        {% csrf_token %}
+       Your article should have a minimum of 100 words to use the summarizer..<br>
+   <div>Select the number of sentences: <select name = "dropdown" style="width: 70px; margin-left: 25px; display: inline-block;">
+    <option value = "2" selected>2</option>
+    <option value = "5">5</option>
+    <option value = "10">10</option>
+    <option value = "15">15</option>
+    <option value = "20">20</option>
+    <option value = "25">25</option>
+    <option value = "30">30</option>
+    <option value = "35">35</option>
+    <option value = "40">40</option>
+    <option value = "45">45</option>
+    <option value = "50">50</option>
+</select>
+</div>
+
+   <div >Enter article below:
+   <textarea name="textcontent" style="margin-left: 0.5%; width:98%; height:auto;">{{texta}}</textarea>
+  </div><br>
+   <div class="content style4 featured"> <input type="submit" value="Generate Summary"/></div>
+  
+   <div class="col-12">Summary:
+   <textarea id="t1" name="textcontent1"  style="margin-left: 0.5%; width:98%; overflow: auto;" onKeyUp="textAreaAdjust(this)">{{s1}}</textarea></div>  
+   <div class="col-12">
+    <ul class="actions special">
+        <li><input type="button" onclick="textAreaAdjust(textcontent)" value="Expand Article" ></li>
+        <li> <input type="button" onclick="textAreaAdjust(textcontent1)" value="Expand Summary"></li>
+        <li> <input type="button" onClick="saveFile();" value="Download"></li>
+        
+    </ul>
+</div>
+</form>
+
+</body><br><br>
+<script>
+function textAreaAdjust(o) {
+				if(window.screen.availWidth >= 500)	{
+					o.style.height = "1px";
+					o.style.height = (25+o.scrollHeight)+"px";
+				}
+				var contentText = $("#contentText").val();
+				noticeForText();
+				noticeTextSize();
+			}
+</script>
+<script>
+    let saveFile = () => {
+    	
+        const text1 = document.getElementById('t1');
+        const text2 = '{{s1}}';
+        console.log(text1)
+        // This variable stores all the data.
+        let data = 
+            'Summary: ' +text2 + ' \r\n ';
+        
+        // Convert the text to BLOB.
+        const textToBLOB = new Blob([data], { type: 'text/plain' });
+        const sFileName = 'Summary.txt';	   // The file to save the data.
+
+        let newLink = document.createElement("a");
+        newLink.download = sFileName;
+
+        if (window.webkitURL != null) {
+            newLink.href = window.webkitURL.createObjectURL(textToBLOB);
+        }
+        else {
+            newLink.href = window.URL.createObjectURL(textToBLOB);
+            newLink.style.display = "none";
+            document.body.appendChild(newLink);
+        }
+
+        newLink.click(); 
+    }
+</script>
+
+<!-- Footer -->
+<div>
+<section id="footer" style="text-align: center;">
+    <ul class="icons">
+        <li><a href="#" class="icon brands fa-twitter" style="color: white;"><span class="label">Twitter</span></a></li>
+        <li><a href="#" class="icon brands fa-facebook-f" style="color: white;"><span class="label">Facebook</span></a></li>
+        <li><a href="#" class="icon brands fa-instagram" style="color: white;"><span class="label">Instagram</span></a></li>
+        <li><a href="#" class="icon brands fa-dribbble"style="color: white;"><span class="label">Dribbble</span></a></li>
+        <li><a href="#" class="icon brands fa-github"style="color: white;"><span class="label">GitHub</span></a></li>
+    </ul>
+    <div class="copyright">
+        <ul class="menu" style="color: white;">
+            <li>&copy; Untitled. All rights reserved.</li><li>Text summarizer</li>
+        </ul>
+    </div>
+</section></div>
+
+
+
+<!-- Scripts -->
+<script src="static assets/js/jquery.min.js"></script>
+<script src="static assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+
+</html>

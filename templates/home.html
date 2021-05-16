@@ -1,0 +1,228 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- <head> -->
+		<title>Text Summarizer</title>
+		<meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="icon" href="{% static 'home/images/icon.JPG' %}" type="image/icon type">
+		<link rel="stylesheet" href="{% static 'home/assets/css/main.css' %}"/> 
+         
+	</head>
+<body class="is-preload">
+
+    <!-- Header -->
+        <section id="header" class="dark">
+            <header>
+                <p><img  src="{% static 'home/images/icon1.JPG' %}" height="60px"></p>
+                <h1>Welcome to Text Summarizer</h1>
+                <p>Let's you create short summaries to save your time!</p>
+            </header>
+            <input type="button" id="sum" value="Summarize now!"/>
+            <script type="text/javascript">
+            document.getElementById("sum").onclick = function () {
+            location.href = "http://127.0.0.1:8000/home/summarize";
+             };
+        </script>
+        </section>
+
+    <!-- First -->
+        <section id="first" class="main">
+            <header>
+                <div class="container">
+                    <h2>IDENTIFY THE IMPORTANT IDEAS AND FACTS</h2>
+                    <p>To help you summarize and analyze your texts, your articles, your scientific texts, your history texts as well as your well-structured analyses work of art, This Text Summarizer provides you with a "Summary text tool" : an educational tool that identifies and summarizes the important ideas and facts of your documents. Summarize in 1-Click, go to the main idea or skim through so that you can then interpret your texts quickly and develop your syntheses.</p>
+                </div>
+            </header>
+            <div class="content dark style1 featured">
+                <div class="container">
+                    <h3>TEXT SUMMARIZER CAN BE USED BY</h3>
+                    <div class="row">
+                        <div class="col-4 col-12-narrow">
+                            <section>
+                                <span class="feature-icon"><span class="icon fa-eye"></span></span>
+                                <header>
+                                    <h3>Readers</h3>
+                                </header>
+                                <p>Save time, summarize your digital documents for a relevant and fast uptake of information.</p>
+                            </section>
+                        </div>
+                        <div class="col-4 col-12-narrow">
+                            <section>
+                                <span class="feature-icon"><span class="icon solid fa-flag"></span></span>
+                                <header>
+                                    <h3>Institutions</h3>
+                                </header>
+                                <p>Identify the most important passages in texts that contains a lot of words for detailed analyses.</p>
+                            </section>
+                        </div>
+                        <div class="col-4 col-12-narrow">
+                            <section>
+                                <span class="feature-icon"><span class="icon solid fa-edit"></span></span>
+                                <header>
+                                    <h3>Editors</h3>
+                                </header>
+                                <p>Identify and understand very fast the facts and the ideas of your texts that are part of the current news and events.</p>
+                            </section>
+                        </div>
+                        <div class="col-4 col-12-narrow">
+                            <section>
+                                <span class="feature-icon"><span class="icon solid fa fa-scroll"></span></span>
+                                <header>
+                                    <h3>College Students</h3>
+                                </header>
+                                <p>Summarize your Wikipedia pages in a matter of seconds for your productivity.</p>
+                            </section>
+                        </div>
+                        <div class="col-4 col-12-narrow">
+                            <section>
+                                <span class="feature-icon"><span class="icon solid fa fa-pen"></span></span>
+                                <header>
+                                    <h3>Publishers</h3>
+                                </header>
+                                <p>Identify your books' or your authors' ideas quickly. Summarize the most important main points.</p>
+                            </section>
+                        </div>
+                        <div class="col-4 col-12-narrow">
+                            <section>
+                                <span class="feature-icon"><span class="icon solid fa fa-book"></span></span>
+                                <header>
+                                    <h3>Professors</h3>
+                                </header>
+                                <p>Identify the most important ideas and arguments of your texts so that you can prepare your lessons.</p>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <!-- Second -->
+        <section id="second" class="main">
+            <header>
+                <div class="container">
+                    <h2>WHY DO YOU NEED TO SUMMARIZE A TEXT?</h2>
+                    <div class="col-4 col-12-narrow">
+                        <p>The ability to summarize a text and compress it can be very important. For example, if an author has to write a maximum amount of words for an article, essay, report, story, book, paper, you name it. Text Summarizer will help to make sure its word count reaches a specific requirement or stays within a certain limit.</p>
+                    </div>
+                </div>
+            </header>
+            <div class="content dark style2">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-4 col-12-narrow">
+                            <section>
+                                <h3>HOW DOES THE SUMMARIZER WORK?</h3>
+                                <p>You can automatically generate a summary of any article you want.<br>First copy paste the article/text you want a 
+                                summary of (You can write the article in the textbox or copy from another resource). <br> Then paste it in the text box and click on the Summarize button.</p>
+                                <p>Text Summarizer that uses NLP (Natural Language Processing) to generate a 
+                                    summary of the given article or text. The Text Summarizer uses an Extractive 
+                                    Summarization method which attempts to summarize articles by selecting a subset 
+                                    of words that retain the most important points. Weights are assigned to the important 
+                                    part of sentences using this approach which is then used to form the summary. </p>
+                                <footer>
+                                    <a href="#third" class="button scrolly">About us</a>
+                                </footer>
+                            </section>
+                        </div>
+                        <div class="col-8 col-12-narrow">
+                            <div class="row">
+                                <div class="col-6"><img src="{% static 'home/images/sum.png' %}" height="150%" width="200%" margin-left="550px" alt="1" /></a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <!-- Third -->
+        <section id="third" class="main">
+            <header>
+                <div class="container">
+                    <h2>About us</h2>
+                    <p>We provide our users a tool that allows them to automatically create summaries of important texts and documents to help them save time and effort!</p>
+                </div>
+            </header>
+            <div class="content dark style3">
+                <div class="container">
+                    <span class="image featured"><img src="{% static 'home/images/books1.jpg' %}" alt="" /></span>
+                    <div class="row">
+                        <!-- <div class="col-4 col-12-narrow"> -->
+                            <h3>RULES OF SUMMARIZING</h3>
+                            <p>Whether you are summarizing manually or using a summarization tool, you should follow the rules listed below:<br>
+                            <br>1. When summarizing, make sure you are covering all the points in the actual context to maintain the concept of the writer.<br>
+                               2. Your summary should be concise including the informative concepts only. Do not include the unessential passages in your summary. <br>
+                               3.The summary can represent the author’s idea. The original idea shouldn’t be inaccurate. <br>
+                               4.Don’t repeat any points more than once. You should also not add your points.<br>
+                               5. Combine the ideas of the original content while it should be matching with the other sentences. <br>
+                               6. In summary, you should use the words of the category instead of the object.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <!-- Fourth -->
+        <section id="fourth" class="main">
+            <header>
+                <div class="container">
+                    <h2>WHY SHOULD YOU TRY SUMMARIZING TOOL?</h2>
+                    <div class="row">
+                        <div class="col-4 col-12-narrow">
+                        <section>
+                            <span class="feature-icon"><span class="icon solid fa-file-invoice-dollar"></span></span>
+                            <header>
+                                <h3><b>Free of cost</b></h3>
+                            </header>
+                            <p>Unlimited summarizations without character limitations are available at any time. The summarizing-tool works for you 24/7 without compulsory registration.</p>
+                        </section>
+                    </div>
+                    <div class="col-4 col-12-narrow">
+                        <section>
+                            <span class="feature-icon"><span class="icon solid fa-robot m-auto"></span></span>
+                            <header>
+                                <h3><b>Technology</b></h3>
+                            </header>
+                            <p>Our AI uses natural language processing to grab critical information while maintaining the original context.</p>
+                        </section>
+                    </div>
+                    <div class="col-4 col-12-narrow">
+                        <section>
+                            <span class="feature-icon"><span class="icon solid fa-shield-alt m-auto"></span></span>
+                            <header>
+                                <h3><b>Total Safety</b></h3>
+                            </header>
+                            <p>The texts you check are not saved in the system or used anywhere for the purposes of third parties.</p>
+                        </section>
+                    </div>
+                </div>
+            </header>
+           
+        </section>
+
+    <!-- Footer -->
+        <section id="footer">
+            <ul class="icons">
+                <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+                <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+                <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+                <li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
+                <li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+            </ul>
+            <div class="copyright">
+                <ul class="menu">
+                    <li>&copy; Untitled. All rights reserved.</li><li>Text summarizer</li>
+                </ul>
+            </div>
+        </section>
+
+    <!-- Scripts -->
+        <script src="static assets/js/jquery.min.js"></script>
+        <script src="static assets/js/jquery.scrolly.min.js"></script>
+        <script src="assets/js/browser.min.js"></script>
+        <script src="assets/js/breakpoints.min.js"></script>
+        <script src="assets/js/util.js"></script>
+        <script src="assets/js/main.js"></script>
+</html>
